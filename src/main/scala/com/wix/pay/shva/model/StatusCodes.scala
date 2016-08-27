@@ -46,6 +46,8 @@ object StatusCodes {
   val zeroCeilingRefund = "161"
   /** Card has zero ceiling for split payments. */
   val zeroCeilingSplit = "162"
+  /** Double transaction. */
+  val doubleTransaction = "173"
 }
 
 object IsShvaRejectedStatusCode {
@@ -69,8 +71,8 @@ object IsShvaRejectedStatusCode {
     StatusCodes.zeroCeilingDollars,
     StatusCodes.zeroCeilingPhone,
     StatusCodes.zeroCeilingRefund,
-    StatusCodes.zeroCeilingSplit
-
+    StatusCodes.zeroCeilingSplit,
+    StatusCodes.doubleTransaction
   )
 
   def unapply(statusCode: String): Option[String] = {
