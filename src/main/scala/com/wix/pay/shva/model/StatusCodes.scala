@@ -1,6 +1,9 @@
 package com.wix.pay.shva.model
 
-/** @see <a href="https://www.shva.co.il/status-codes/">הודעות שגיאה של אשראית</a> */
+/**
+  * @see <a href="https://www.shva.co.il/status-codes/">הודעות שגיאה של אשראית</a>
+  * @see <a href="https://www.myofficeguy.com/applications/creditcard/shvaemvcodes/">קודי שגיאות של שב"א EMV</a>
+  */
 object StatusCodes {
   /** Permitted transaction. */
   val success = "000"
@@ -48,6 +51,11 @@ object StatusCodes {
   val zeroCeilingSplit = "162"
   /** Double transaction. */
   val doubleTransaction = "173"
+
+  /** Invalid card number (EMV terminal only). */
+  val invalidCardNumber = "120"
+  /** Missing parameters (EMV terminal only). */
+  val missingParameters = "418"
 }
 
 object IsShvaRejectedStatusCode {
@@ -72,7 +80,9 @@ object IsShvaRejectedStatusCode {
     StatusCodes.zeroCeilingPhone,
     StatusCodes.zeroCeilingRefund,
     StatusCodes.zeroCeilingSplit,
-    StatusCodes.doubleTransaction
+    StatusCodes.doubleTransaction,
+    StatusCodes.invalidCardNumber,
+    StatusCodes.missingParameters
   )
 
   def unapply(statusCode: String): Option[String] = {
