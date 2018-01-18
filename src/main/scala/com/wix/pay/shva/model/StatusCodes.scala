@@ -1,6 +1,6 @@
 package com.wix.pay.shva.model
 
-/** @see <a href="http://www.shva.co.il/files/files/STATUSCODES.pdf">נספח 1 קודי סטטוס</a> */
+/** @see <a href="https://www.shva.co.il/status-codes/">הודעות שגיאה של אשראית</a> */
 object StatusCodes {
   /** Permitted transaction. */
   val success = "000"
